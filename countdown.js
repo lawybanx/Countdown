@@ -27,7 +27,3 @@ reset.addEventListener('click', function reset() {
     document.getElementById("display").innerHTML = 0;
 
 });
-// function removeItem(time) {
-//     time.target.parentElement.removeChild(time.target);
-//   };
-// div.onclick = removeItem;
