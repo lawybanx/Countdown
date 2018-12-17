@@ -2,7 +2,7 @@ var button = document.querySelector("#button");
 var div = document.querySelector("div");
 var Timer;
 var time;
-button.addEventListener('click', function countDown() {
+button.addEventListener('click', function () {
     'use strict';
     var time = document.querySelector("#input").value;
     if (time !== 0) {
