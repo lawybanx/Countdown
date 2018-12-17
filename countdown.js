@@ -15,7 +15,3 @@ let time = document.querySelector("#input").value;
     
 }
 )
-// function removeItem(time) {
-//     time.target.parentElement.removeChild(time.target);
-//   };
-// div.onclick = removeItem;
