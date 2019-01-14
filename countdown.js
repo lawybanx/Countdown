@@ -10,11 +10,12 @@ button.addEventListener('click', function () {
     Timer = setInterval(function () {
         time--;
         document.getElementById("display").textContent = time;
-        if (time <= 0 || time == null) {
+        if ( time <= 0 || time == null ) {
             clearInterval(Timer);
             alert("please input a number");
+            document.getElementById("display").innerHTML = 0;
         }
-        document.getElementById("display").innerHTML = 0;
+        
         pause.style.display = 'inline-block';
         resume.style.display = 'inline-block';
         reset.style.display = 'inline-block';
