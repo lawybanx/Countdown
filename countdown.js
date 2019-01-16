@@ -1,23 +1,24 @@
 var button = document.querySelector("#button");
 var Timer;
 var time;
-    button.addEventListener('click', countdownFunc());
+button.addEventListener('click', countdownFunc());
 
-    var pause = document.querySelector("#pause");
-    pause.style.display = 'none';
-    pause.addEventListener('click', pauseFunc());
+var pause = document.querySelector("#pause");
+pause.style.display = 'none';
+pause.addEventListener('click', pauseFunc());
 
-    var resume = document.querySelector("#resume");
-    resume.style.display = 'none';
-    resume.addEventListener('click', resumeFunc());
+var resume = document.querySelector("#resume");
+var resume = document.querySelector("#resume");
+resume.style.display = 'none';
+resume.addEventListener('click', resumeFunc());
 
-    var reset = document.querySelector("#reset");
-    reset.style.display = 'none';
-    reset.addEventListener('click', resetFunc());
+var reset = document.querySelector("#reset");
+reset.style.display = 'none';
+reset.addEventListener('click', resetFunc());
     
 function resetFunc() {
+    'use strict';
     return function () {
-        'use strict';
         if (time !== 0) {
             clearInterval(Timer);
         }
@@ -26,8 +27,8 @@ function resetFunc() {
 }
 
 function pauseFunc() {
+    'use strict';
     return function () {
-        'use-strict';
         if (time !== 0) {
             clearInterval(Timer);
         }
@@ -35,8 +36,8 @@ function pauseFunc() {
 }
 
 function countdownFunc() {
+    'use strict';
     return function () {
-        'use strict';
         var time = document.querySelector("#input").value;
         if (time !== 0) {
             clearInterval(Timer);
@@ -56,8 +57,8 @@ function countdownFunc() {
 }
 
 function resumeFunc() {
+    'use strict';
     return function () {
-        'use strict';
         var time = document.querySelector("#display").textContent;
         if (time !== 0) {
             clearInterval(Timer);
