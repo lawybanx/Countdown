@@ -34,11 +34,22 @@ button.addEventListener('click', function () {
     resume.style.display = 'none';
     resume.addEventListener('click', function () {
         'use strict';
+        var time = document.querySelector("#display").textContent;
+        if (time !== 0) {
+            clearInterval(Timer);
+        }
         Timer = setInterval(function () {
-            document.getElementById("display").textContent = time;
-            time    
             time--;
-    }, 1000);
+            document.getElementById("display").textContent = time;
+            if ( time < 0 ) {
+                clearInterval(Timer);
+                document.getElementById("display").innerHTML = 0;
+            }
+            
+            pause.style.display = 'inline-block';
+            resume.style.display = 'inline-block';
+            reset.style.display = 'inline-block';
+            }, 1000);
 });
 
     var reset = document.querySelector("#reset");
