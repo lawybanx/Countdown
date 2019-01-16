@@ -8,11 +8,10 @@ button.addEventListener('click', function () {
         clearInterval(Timer);
     }
     Timer = setInterval(function () {
-        time--;
         document.getElementById("display").textContent = time;
-        if ( time <= 0 || time == null ) {
+        time--;
+        if ( time < 0 ) {
             clearInterval(Timer);
-            alert("please input a number");
             document.getElementById("display").innerHTML = 0;
         }
         
@@ -35,9 +34,12 @@ button.addEventListener('click', function () {
     resume.style.display = 'none';
     resume.addEventListener('click', function () {
         'use strict';
-     
-        
-    });
+        Timer = setInterval(function () {
+            document.getElementById("display").textContent = time;
+            time    
+            time--;
+    }, 1000);
+});
 
     var reset = document.querySelector("#reset");
     reset.style.display = 'none';
