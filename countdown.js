@@ -15,26 +15,7 @@ resume.addEventListener('click', resumeFunc());
 var reset = document.querySelector("#reset");
 reset.style.display = 'none';
 reset.addEventListener('click', resetFunc());
-    
-function resetFunc() {
-    'use strict';
-    return function () {
-        if (time !== 0) {
-            clearInterval(Timer);
-        }
-        document.getElementById("display").innerHTML = 0;
-    };
-}
-
-function pauseFunc() {
-    'use strict';
-    return function () {
-        if (time !== 0) {
-            clearInterval(Timer);
-        }
-    };
-}
-
+ 
 function countdownFunc() {
     'use strict';
     return function () {
@@ -56,6 +37,15 @@ function countdownFunc() {
     };
 }
 
+function pauseFunc() {
+    'use strict';
+    return function () {
+        if (time !== 0) {
+            clearInterval(Timer);
+        }
+    };
+}
+
 function resumeFunc() {
     'use strict';
     return function () {
@@ -74,3 +64,12 @@ function resumeFunc() {
     };
 }
 
+function resetFunc() {
+    'use strict';
+    return function () {
+        if (time !== 0) {
+            clearInterval(Timer);
+        }
+        document.getElementById("display").innerHTML = 0;
+    };
+}
