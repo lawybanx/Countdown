@@ -40,11 +40,9 @@ function countdownFunc() {
 function pauseFunc() {
     'use strict';
     return function () {
-        if (time !== 0) {
             clearInterval(Timer);
         }
     };
-}
 
 function resumeFunc() {
     'use strict';
