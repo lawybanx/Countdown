@@ -48,7 +48,7 @@ function pauseFunc() {
         clearInterval(Timer);
         add.style.display = 'inline-block';
         time = document.querySelector("#display").textContent;
-        if (time === 0) {
+        if (time === '0') {
             add.style.display = 'none';
         }
     };
