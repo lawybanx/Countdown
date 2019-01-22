@@ -15,11 +15,15 @@ resume.addEventListener('click', resumeFunc());
 var reset = document.querySelector("#reset");
 reset.style.display = 'none';
 reset.addEventListener('click', resetFunc());
- 
+
+var add = document.querySelector("#add");
+add.style.display = 'none';
+add.addEventListener('click', addFunc());
+
 function countdownFunc() {
     'use strict';
     return function () {
-        var time = document.querySelector("#input").value;
+        time = document.querySelector("#input").value;
         if (time !== 0) {
             clearInterval(Timer);
         }
@@ -33,6 +37,7 @@ function countdownFunc() {
             pause.style.display = 'inline-block';
             resume.style.display = 'inline-block';
             reset.style.display = 'inline-block';
+            add.style.display = 'none';
         }, 1000);
     };
 }
@@ -40,14 +45,19 @@ function countdownFunc() {
 function pauseFunc() {
     'use strict';
     return function () {
-            clearInterval(Timer);
+        clearInterval(Timer);
+        add.style.display = 'inline-block';
+        time = document.querySelector("#display").textContent;
+        if (time === 0) {
+            add.style.display = 'none';
         }
     };
+}
 
 function resumeFunc() {
     'use strict';
     return function () {
-        var time = document.querySelector("#display").textContent;
+        time = document.querySelector("#display").textContent;
         if (time !== 0) {
             clearInterval(Timer);
         }
@@ -59,6 +69,7 @@ function resumeFunc() {
                 document.getElementById("display").innerHTML = 0;
             }
         }, 1000);
+        add.style.display = 'none';
     };
 }
 
@@ -68,6 +79,15 @@ function resetFunc() {
         if (time !== 0) {
             clearInterval(Timer);
         }
-        document.getElementById("display").innerHTML = 0;
+        document.getElementById("display").textContent = 0;
+        add.style.display = 'none';
+    };
+}
+
+function addFunc() {
+    'use strict';
+    return function () {
+        time++;
+        document.querySelector("#display").textContent = time;
     };
 }
