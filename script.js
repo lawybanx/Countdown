@@ -5,7 +5,7 @@ button.addEventListener('click', countdownFunc());
 
 var pause = document.querySelector("#pause");
 pause.style.display = 'none';
-pause.addEventListener('click', pauseFunc());
+pause.addEventListener("click", pauseFunc())g;
 
 var resume = document.querySelector("#resume");
 var resume = document.querySelector("#resume");
